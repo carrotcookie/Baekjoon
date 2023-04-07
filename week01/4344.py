@@ -1,5 +1,7 @@
 for _ in range(int(input())):
     scores = list(map(int, input().split()))
+    
+    # 슬라이싱 이용
     avg = sum(scores[1:]) / scores[0]
     cnt = 0
 
