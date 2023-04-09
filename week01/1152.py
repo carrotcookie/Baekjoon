@@ -1,3 +1,3 @@
-s = list(map(str, input().split()))
+s = input().split()
 
 print(len(s))

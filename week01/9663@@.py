@@ -4,6 +4,7 @@ count = 0
 
 def put(i):
     # 위에서 아래로 두니 위쪽만 검사해줌
+    # 위쪽만 봤을때 열이 겹치거나 대각선으로 놓았으면 False
     for j in range(i):
         if pos[i] == pos[j] or i-j == abs(pos[i]-pos[j]):
             return False
