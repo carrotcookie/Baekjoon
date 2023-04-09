@@ -56,12 +56,12 @@ def prime_num_sieve(lst, max_num):
         for j in range(2*i, max_num+1, i):
             lst[j] = 0
 
-def find_prime_pair(num):
+def find_prime_pair(lst, num):
     a, b = num // 2, num // 2
     
     while a > 1:
-        if prime_num_lst[a] != 0 and prime_num_lst[b] != 0:
-            print(prime_num_lst[a], prime_num_lst[b])
+        if lst[a] != 0 and lst[b] != 0:
+            print(lst[a], lst[b])
             break
         a -= 1
         b += 1
@@ -79,5 +79,5 @@ prime_num_lst = [i for i in range(max_input + 1)]
 
 prime_num_sieve(prime_num_lst, max_input)
 
-for i in num_lst:
-    find_prime_pair(i)
+for num in num_lst:
+    find_prime_pair(prime_num_lst, num)
