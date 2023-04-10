@@ -47,6 +47,8 @@ def quick_sort(a, left, right):
     pr = right
     pivot_val = a[(left + right) // 2]
 
+    print(f'a[{left}] ~ a[{right}]: ', *a[left : right + 1])
+
     while pl <= pr:
         while a[pl] < pivot_val: pl += 1
         while a[pr] > pivot_val: pr -= 1
@@ -101,6 +103,6 @@ if __name__ == '__main__':
     # selection_sort(a)
     # bubble_sort(a)
     # insertion_sort(a)
-    # quick_sort(a, 0, len(a) - 1)
-    merge_sort(a, 0, len(a) - 1)
+    quick_sort(a, 0, len(a) - 1)
+    # merge_sort(a, 0, len(a) - 1)
     print(f'정렬 후: {a}')

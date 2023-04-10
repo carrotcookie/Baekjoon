@@ -16,15 +16,15 @@ def set(i):
     if  i > n-1:
         count += 1 # 모든행에 두는데 성공했으면 카운팅 후 리턴
 
-        # 결과 그림으로 보기
-        arr = [['□'] * n for _ in range(n)]
-        for j in range(1, n+1):
-            arr[j-1][pos[j-1]] = '■'
-        for j in range(n):
-            for k in range(n):
-                print(arr[j][k], end = ' ')
-            print()
-        print()
+        # # 결과 그림으로 보기
+        # arr = [['□'] * n for _ in range(n)]
+        # for j in range(1, n+1):
+        #     arr[j-1][pos[j-1]] = '■'
+        # for j in range(n):
+        #     for k in range(n):
+        #         print(arr[j][k], end = ' ')
+        #     print()
+        # print()
 
         return
     else:
