@@ -1,3 +1,4 @@
+# 1.
 n = int(input())
 arr = list(map(int, input().split()))
 result = [] # 결과값 저장

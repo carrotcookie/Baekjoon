@@ -1,26 +1,40 @@
 import sys
 
-def adjacent(i):
-    if a[i-1] or a[i+1] or a[i-n] or a[i+n]:
-        return True
-    return False
+def recursive(i, j, h):
+    tmp = []
+    tmp.append((i, j))
 
+    while len(tmp):
+        i, j = tmp.pop()
+
+        for dx, dy in dir:
+            nx, ny = i + dx, j + dy
+
+            if 0 <= nx and nx < n and 0 <= ny and ny < n and not visit[nx][ny] and a[nx][ny] > h:
+                visit[nx][ny] = 1
+                tmp.append((nx, ny))
+                
+    # for dx, dy in dir:
+    #     nx, ny = i + dx, j + dy
+    #     if 0 <= nx and nx < n and 0 <= ny and ny < n and not visit[nx][ny] and a[nx][ny] > h:
+    #         visit[nx][ny] = 1
+    #         recursive(nx, ny, h)
+
+dir = ((1,0), (-1,0), (0,-1), (0,1))
 n = int(input())
-a = []
-area = []
+a = [list(map(int, input().split())) for _ in range(n)]
 
-for i in range(n):
-    a += list(map(int, input().split()))
+result = -sys.maxsize
 
-max_height = -sys.maxsize
-for i in range(n**2):
-        if a[i] > max_height:
-            max_height = a[i]
+for h in range(100): # 물 높이
+    count = 0
+    visit = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if not visit[i][j] and a[i][j] > h:
+                visit[i][j] = 1
+                recursive(i, j, h)
+                count += 1
 
-rain_height = 1
-
-while rain_height < max_height:
-    for i in range(n**2):
-        if a[i] <= rain_height:
-            a[i] = 0
-        if a[i] and adjacent(i):
+    result = max(result, count)
+print(result)
