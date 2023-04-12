@@ -18,16 +18,16 @@ def z_curve():
             count += size**2 * 3
             i -= size
             j -= size
+        size //= 2
 
-        size /= 2
     if i == 0 and j == 0:
-        print(int(count))
+        print((count))
     elif i == 0 and j == 1:
-        print(int(count + 1))
+        print((count + 1))
     elif i == 1 and j == 0:
-        print(int(count + 2))
+        print((count + 2))
     else:
-        print(int(count + 3))
+        print((count + 3))
 
 n, i, j = map(int, input().split())
 count = 0

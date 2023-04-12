@@ -5,7 +5,6 @@ def hanoi(n, start, end, via):
     print(start, end)
     hanoi(n-1, via, end, start)
 
-
 n = int(input())
 count = 2**n - 1
 

@@ -13,7 +13,9 @@ def recursive(i, j, h):
             if 0 <= nx and nx < n and 0 <= ny and ny < n and not visit[nx][ny] and a[nx][ny] > h:
                 visit[nx][ny] = 1
                 tmp.append((nx, ny))
-                
+    
+    # recursionError 떠서 depth 강제로 늘려야함, default: 1000번
+    # sys.setrecursionlimit(10 ** 6)
     # for dx, dy in dir:
     #     nx, ny = i + dx, j + dy
     #     if 0 <= nx and nx < n and 0 <= ny and ny < n and not visit[nx][ny] and a[nx][ny] > h:

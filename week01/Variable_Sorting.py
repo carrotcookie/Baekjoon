@@ -4,11 +4,11 @@ def selection_sort(a):
     n = len(a)
 
     for i in range(n-1):
-        min = i
+        min_val_index = i
         for j in range(i+1, n):
-            if a[j] < a[min]:
-                min = j
-        a[j], a[min] = a[min], a[j]
+            if a[j] < a[min_val_index]:
+                min_val_index = j
+        a[j], a[min_val_index] = a[min_val_index], a[j]
 
 # 2. 버블정렬 (Bubble Sort)
 # O(N^2)

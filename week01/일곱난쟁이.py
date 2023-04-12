@@ -8,7 +8,7 @@ def recursive(start, cnt):
         if sum(b) == 100:
             for i in b:
                 print(i)
-                exit()
+            exit()
         return
     
     for i in range(start, 9):
