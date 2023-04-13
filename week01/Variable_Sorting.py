@@ -143,7 +143,7 @@ if __name__ == '__main__':
     # bubble_sort(a)
     # insertion_sort(a)
     # quick_sort(a, 0, len(a) - 1)
-    # merge_sort(a, 0, len(a) - 1)
+    merge_sort(a, 0, len(a) - 1)
     # heap_sort(a)
     # counting_sort(a)
     print(f'정렬 후: {a}')
