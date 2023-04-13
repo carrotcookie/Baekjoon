@@ -14,7 +14,7 @@ def recur(count, sum, add, sub, mul, div):
     if sub:
         recur(count + 1, sum - a[count], add, sub - 1, mul, div)
     if mul:
-        recur(count + 1, sum * a[count], add, sub, mul - 1, div)
+        recur(count + 1, sum * a[count], add, sub, mul - 1, div)a
     if div:
         recur(count + 1, int(sum / a[count]), add, sub, mul, div - 1)
         
