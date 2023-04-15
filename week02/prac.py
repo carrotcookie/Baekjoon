@@ -20,26 +20,36 @@
 # else:
 #     print('원소가 존재하지 않습니다.')
 
-import sys
+a = [1, 2, 2, 2, 3, 5, 6, 7, 7]
 
-n, m = map(int, input().split())
-arr = list(map(int, sys.stdin.readline().split()))
-result = 0
-left, right = 0, max(arr)
+while True:
+    n = int(input())
 
-while left <= right:
-    total = 0
-    mid = (left + right) // 2
+    left = 0
+    right = len(a) - 1
+    result_idx = -1
 
-    for i in arr:
-        if i > mid:
-            total += i - mid
+    while left <= right:
+        mid = (left + right) // 2
 
-    if total < m:
-        right = mid - 1
+        # # 같은 값이 있다면 왼쪽
+        if a[mid] >= n: 
+            right = mid - 1
+            result_idx = mid
+        else:
+            left = mid + 1
+            result_idx = mid + 1
+
+        # # 같은 값이 있다면 오른쪽
+        # if a[mid] > n: 
+        #     right = mid - 1
+        #     result_idx = mid
+        # else:
+        #     left = mid + 1
+        #     result_idx = mid + 1
+
+
+    if result_idx > -1:
+        print(f'{n}은 {a}에서 [{result_idx}]에 넣을 수 있습니다.')
     else:
-        result = mid
-        left = mid + 1
-        
-
-print(result)
+        print(f'{n}은 {a}에 존재하지 않습니다.')
