@@ -1,7 +1,9 @@
+import sys
+
 a = []
 
 for _ in range(int(input())):
-    tmp = input().split()
+    tmp = sys.stdin.readline().split()
     n = len(tmp)
 
     if n == 2:

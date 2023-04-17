@@ -61,4 +61,4 @@ while start <= end:
         result = mid - 1
 
 print()
-print(mid)
+print(mid-1)

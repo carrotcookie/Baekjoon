@@ -1,13 +1,15 @@
 import sys
 
-def func(depth, x1, x2, y1, y2, width, height):
+def func(depth, x1, x2, y1, y2, width, height, border_x, border_y):
     if width < 1 and height < 1:
         return
 
     if width // 2:
-        width //= 2
+        width //= 2 # 3
+        if depth:
+            
     if height // 2:
-        height //= 2
+        height //= 2 # 3
 
 
     record = []
