@@ -39,8 +39,8 @@ def heapify_up_min(a):
 def heapify_down_max(a):
     n = len(a)
 
-    if n == 0:
-        return 
+    # if n == 0:
+    #     return 
 
     start = 0
     parent = start
@@ -66,8 +66,8 @@ def heapify_down_max(a):
 def heapify_down_min(a):
     n = len(a)
 
-    if n == 0:
-        return 
+    # if n == 0:
+    #     return 
 
     start = 0
     parent = start

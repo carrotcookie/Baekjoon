@@ -1,5 +1,3 @@
-import sys
-
 bracket = list(input())
 
 stack = []

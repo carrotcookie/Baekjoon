@@ -87,19 +87,14 @@ def func(left, right):
 
     while left < i or j < right:
 
-        if j < right and (left == i or arr[i - 1] > arr[j + 1]):
-            print(f'범위 {left} ~ {right}')
-            print(f'i: {i:<3} j: {j:<3}에서 오른쪽으로 이동')
+        if j < right and (left == i or arr[i - 1] < arr[j + 1]):
             j += 1
             w += 1
             h = min(h, arr[j])
         else:
-            print(f'범위 {left} ~ {right}')
-            print(f'i: {i:<3} j: {j:<3}에서 왼쪽으로 이동')
             i -= 1
             w += 1
             h = min(h, arr[i])
-        print(f'너비: {w:<3} 높이: {h:<3}')
         result_m = max(result_m, w * h)
 
     return max(result_l, result_m, result_r)
