@@ -33,7 +33,7 @@ for _ in range(e):
     cost, start, end = heapq.heappop(graph)
 
     # 확인용
-    print(p[1:])
+    # print(p[1:])
 
     if find_root(p, start) != find_root(p, end):
         union_parent(p, start, end)

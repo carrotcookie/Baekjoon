@@ -48,7 +48,6 @@ def dfs(cur, symbol):
 
 n, m = map(int, input().split())
 graph = [[] for _ in range(n + 1)]
-# visit = [i for i in range(n + 1)]
 visit = [0] * (n + 1)
 
 for _ in range(m):

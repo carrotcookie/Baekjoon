@@ -134,31 +134,31 @@ input = sys.stdin.readline
 ############################################################################################################################
 
 # 13913. 숨바꼭질 4
-# def func(x):
-#     q = deque()
-#     q.append((x, [x]))
+def func(x):
+    q = deque()
+    q.append((x, [x]))
 
-#     while q:
-#         now, order = q.popleft()
+    while q:
+        now, order = q.popleft()
 
-#         if now == k:
-#             return order
+        if now == k:
+            return order
         
-#         n1 = now * 2
-#         n2 = now - 1
-#         n3 = now + 1
+        n1 = now * 2
+        n2 = now - 1
+        n3 = now + 1
 
-#         if k // 2 <= n1 <= k * 2:
-#             lst1 = order + [n1]
-#             q.append((n1, lst1))
-#         if k // 2 <= n2 <= k * 2:
-#             lst2 = order + [n2]
-#             q.append((n2, lst2))
-#         if k // 2 <= n3 <= k * 2:
-#             lst3 = order + [n3]
-#             q.append((n3, lst3))
+        if k // 2 <= n1 <= k * 2:
+            lst1 = order + [n1]
+            q.append((n1, lst1))
+        if k // 2 <= n2 <= k * 2:
+            lst2 = order + [n2]
+            q.append((n2, lst2))
+        if k // 2 <= n3 <= k * 2:
+            lst3 = order + [n3]
+            q.append((n3, lst3))
 
-# n, k = map(int, input().split())
-# result = func(n)
-# print(len(result) - 1)
-# print(*result)
+n, k = map(int, input().split())
+result = func(n)
+print(len(result) - 1)
+print(*result)

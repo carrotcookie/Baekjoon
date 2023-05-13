@@ -49,9 +49,10 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
+
     def search(self, key):
         node = self.root
-
+        
         # 루트가 존재하지 않으면 None
         if not node:
             return None

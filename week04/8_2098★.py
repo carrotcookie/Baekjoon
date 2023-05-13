@@ -20,7 +20,9 @@ def func(node, visit):
             # 경로가 있으면 해당 도시를 제외한 나머지 도시들 방문해야함
             rest_visit = visit ^ i
             # 아직 계산한것이 아니라면 계산해주고
+            
             if not dp[idx][rest_visit]:
+                print(idx, rest_visit)
                 dp[idx][rest_visit] = func(idx, rest_visit)
             # 이미 계산한것이라면 바로 넣어줌
             min_value = min(min_value, W[node][idx] + dp[idx][rest_visit])
