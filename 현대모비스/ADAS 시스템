@@ -1,0 +1,55 @@
+import sys
+import heapq
+input = sys.stdin.readline
+
+def func(id_, x_, y_):
+    global score
+    q = []
+    heapq.heappush(q, [id_, x_, y_])
+    visit[x_][y_] = 1
+
+    while q:
+        id, x, y = heapq.heappop(q)
+
+        if graph[x][y] == 'E':
+            for dx, dy in score_directions:
+                nx, ny = x_ + dx, y_ + dy
+
+                if 0 <= nx < r and 0 <= ny < c and graph[nx][ny] == 'P':
+                    score -= 1
+            print(score if score > 0 else 0)
+            return
+
+        for dx, dy in score_directions:
+            nx, ny = x + dx, y + dy
+
+            if 0 <= nx < r and 0 <= ny < c and graph[nx][ny] == 'P':
+                score += 1
+    
+        if graph[x][y] == 'P':
+            score -= 3
+
+        # 경로계산
+        for dx, dy in route_directions:
+            nx, ny  = x + dx, y + dy
+
+            if 0 <= nx < r and 0 <= ny < c and not visit[nx][ny]:
+                visit[nx][ny] = 1
+                if graph[nx][ny] == 'E':
+                    heapq.heappush(q, [1, nx, ny])
+                elif graph[nx][ny] == 'P':
+                    heapq.heappush(q, [2, nx, ny])
+                else:
+                    heapq.heappush(q, [3, nx, ny])
+
+r, c = map(int, input().split())
+graph = [list(input().rstrip()) for _ in range(r)]
+visit = [[0] * c for _ in range(r)]
+route_directions = [[-1, 0], [0, -1], [0, 1], [1, 0]]
+score_directions = [[-1, 0], [0, -1], [0, 1], [1, 0], [-1, 1], [1, -1], [1, 1], [-1, -1]]
+score = 0
+
+for i in range(r):
+    for j in range(c):
+        if graph[i][j] == 'S':
+            func(3, i, j)
